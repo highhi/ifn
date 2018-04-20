@@ -2,6 +2,11 @@
 
 ifn is a library that is an alternative to the switch syntax.
 
+# Installation
+```
+$ npm i -S @highhi/ifn
+```
+
 # Usage
 
 ```javascript
