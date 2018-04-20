@@ -1,7 +1,11 @@
 const isEqual = require('lodash.isequal');
 
+function isFunc(value) {
+  return typeof value === 'function';
+}
+
 function ifn(conditions = [], defaultValue) {
-  return (value) => {
+  return value => {
     let result;
 
     for (const condition of conditions) {
@@ -10,16 +14,10 @@ function ifn(conditions = [], defaultValue) {
         break;
       }
     }
-    
-    if (typeof result === 'function') {
-      return result();
-    } else if (result) {
-      return result;
-    } else if (typeof defaultValue === 'function') {
-      return defaultValue();
-    }
-    
-    return defaultValue;
+
+    if (isFunc(result)) return result();
+    if (result) return result;
+    return isFunc(defaultValue) ? defaultValue() : defaultValue;
   };
 }
 
