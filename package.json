@@ -1,13 +1,28 @@
 {
-  "name": "ifn",
+  "name": "@highhi/ifn",
   "version": "0.0.1",
   "main": "index.js",
+  "description": "ifn is a library that is an alternative to the switch syntax",
+  "keywords": [
+    "switch",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:highhi/ifn.git"
+  },
+  "author": "highhi",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./index.js",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
     "jest": "^22.4.3",
+    "prettier": "^1.12.1",
     "typescript": "^2.8.1"
   },
   "dependencies": {
